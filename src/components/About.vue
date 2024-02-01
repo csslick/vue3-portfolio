@@ -11,60 +11,36 @@
         veritatis cumque quas esse.</p>
     </div>
 
-    <article class="row mt-5">
+    <article class="row py-5">
       <h2>Skills</h2>
       <dl>
-        <dt class="lead">HTML</dt>
-        <dd>
-          <div 
-            class="progress" 
-            role="progressbar"
-          >
-            <div class="progress-bar" style="width: 90%"></div>
-          </div>
-        </dd>
-        <dt class="lead">CSS</dt>  
-        <dd>
-          <div 
-            class="progress" 
-            role="progressbar"
-          >
-            <div class="progress-bar" style="width: 80%"></div>
-          </div>
-        </dd>
-        <dt class="lead">JavaScript</dt>
-        <dd>
-          <div 
-            class="progress" 
-            role="progressbar"
-          >
-            <div class="progress-bar" style="width: 50%"></div>
-          </div>
-        </dd>
-        <dt class="lead">Vue</dt>
-        <dd>
-          <div 
-            class="progress" 
-            role="progressbar"
-          >
-            <div class="progress-bar" style="width: 75%"></div>
-          </div>
-        </dd>
+        <template v-for="item in skills">
+          <dt class="lead">{{ item.name }}</dt>
+          <dd>
+            <div class="progress" role="progressbar">
+              <div 
+                class="progress-bar text-end pe-3" 
+                :style="{ width: item.point }"
+              >{{ item.point }}</div>
+            </div> 
+          </dd> 
+        </template>
       </dl>
     </article>
   </section>
 </template>
   
 <script setup>
-  const skills = [
-    { name: 'HTML', point: '90%' },
-    { name: 'CSS', point: '80%' },
-    { name: 'JAVASCRIPT', point: '50%' },
-    { name: 'VUE', point: '75%' },
-  ]
+const skills = [
+  { name: 'HTML', point: '90%' },
+  { name: 'CSS', point: '80%' },
+  { name: 'JAVASCRIPT', point: '50%' },
+  { name: 'VUE', point: '75%' },
+]
 </script>
   
 <style lang="scss">
 figure img {
   width: 100%;
-}</style>
+}
+</style>
