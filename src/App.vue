@@ -1,6 +1,4 @@
 <script setup>
-  import TitlePage from './components/TitlePage.vue';
-  import Portfolio from './components/Portfolio.vue';
   import About from './components/About.vue';
 </script>
 
